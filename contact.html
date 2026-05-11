@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & FAQ — HomaPath</title>
+  <meta name="description" content="Get in touch with HomaPath support. Frequently Asked Questions about the sacred Homa booking manager.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 48px;
+    }
+    @media(max-width: 850px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    
+    .info-card {
+      background: #261200;
+      border: 1px solid #3D1E05;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+    .info-card:hover { border-color: var(--primary); transform: translateX(5px); }
+    .info-icon {
+      width: 50px; height: 50px;
+      background: rgba(255, 107, 0, 0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+    .info-title { color: #8B6914; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+    .info-value { color: #FFD700; font-family: 'Cinzel', serif; font-size: 16px; font-weight: 700; }
+    .info-note { color: #C8943A; font-size: 12px; margin-top: 2px; opacity: 0.8; }
+
+    .faq-container {
+      background: #261200;
+      border: 1px solid #3D1E05;
+      border-radius: 20px;
+      padding: 32px;
+    }
+    .faq-title { font-family: 'Cinzel', serif; color: #FFD700; font-size: 22px; margin-bottom: 24px; }
+    .faq-item { border-bottom: 1px solid #3D1E05; padding: 20px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      color: #FFD700; font-size: 16px; font-weight: 600; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q::after { content: '+'; color: var(--primary); font-size: 20px; transition: transform 0.3s; }
+    .faq-q.active::after { content: '−'; transform: rotate(180deg); }
+    .faq-a { color: #C8943A; font-size: 14.5px; line-height: 1.7; padding-top: 12px; display: none; }
+
+    .contact-redirect-card {
+      background: linear-gradient(135deg, #3A1A04, #261200);
+      border: 1.5px dashed var(--primary);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .contact-redirect-card:hover {
+      background: linear-gradient(135deg, #4A2205, #2E1503);
+      border-color: var(--secondary);
+      box-shadow: 0 0 30px rgba(255, 107, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-flame">🔥</span>
+    <span class="nav-logo-text">HomaPath</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#features"><span>✨</span> Features</a></li>
+    <li><a href="index.html#how-it-works"><span>🔥</span> How It Works</a></li>
+    <li><a href="index.html#homas"><span>🕉️</span> Sacred Homas</a></li>
+    <li><a href="privacy.html"><span>🛡️</span> Privacy</a></li>
+    <li><a href="contact.html" style="color:var(--secondary)"><span>📧</span> Contact</a></li>
+    <li>
+      <a href="index.html#download" class="btn-primary nav-cta" 
+         style="padding:10px 22px;font-size:14px;">
+        📱 Download
+      </a>
+    </li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section style="padding:120px 0 80px;">
+  <div class="container" style="max-width:950px;">
+    
+    <div class="text-center" style="margin-bottom:64px;">
+      <div class="section-badge">📧 Get in Touch</div>
+      <h1 class="section-title">
+        Contact <span class="gradient-text">HomaPath</span>
+      </h1>
+      <p style="color:#C8943A;font-size:16px;max-width:520px;margin:16px auto 0;line-height:1.7;">
+        We are here to help you manage your sacred rituals better. Reach out to our team for support, feedback, or any technical questions.
+      </p>
+    </div>
+    
+    <div class="contact-grid">
+      <!-- Left Column -->
+      <div class="fade-up">
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <div>
+            <div class="info-title">Email Us</div>
+            <div class="info-value">ayush.novlabs@gmail.com</div>
+            <div class="info-note">We respond within 24 hours</div>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">📱</div>
+          <div>
+            <div class="info-title">Current Version</div>
+            <div class="info-value">HomaPath v1.0.0</div>
+            <div class="info-note">Sanctuary Edition (Latest)</div>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <div class="info-icon">🤖</div>
+          <div>
+            <div class="info-title">Available On</div>
+            <div class="info-value">Android (Google Play)</div>
+            <div class="info-note">iOS coming soon to App Store</div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; padding:20px; border-radius:16px; background:rgba(255,107,0,0.05); border:1px solid rgba(255,107,0,0.1);">
+          <p style="color:#FFF3D6; font-size:14px; font-style:italic;">
+            "Dharmo Rakshati Rakshitaha — Dharma protects those who protect it. We are honored to serve the Pandit community."
+          </p>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="fade-up delay-1">
+        <div class="faq-container">
+          <h2 class="faq-title">Frequently Asked Questions</h2>
+          
+          <div class="faq-item">
+            <div class="faq-q">Is HomaPath free to download?</div>
+            <div class="faq-a">Yes, HomaPath is completely free to download from the Google Play Store. We believe in supporting our spiritual community, so all essential ritual management features are available at no cost.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Does it work without internet?</div>
+            <div class="faq-a">Absolutely. HomaPath is built with 'Offline-First' technology. You can view, add, and edit bookings even without an active internet connection. The app automatically synchronizes your data with the secure cloud once you are back online.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">How do I reset my password?</div>
+            <div class="faq-a">Security is our priority. If you forget your password, simply go to the login screen and tap the 'Forgot Password?' link. Enter your registered email address, and we will instantly send you a secure link to reset your credentials.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Is my booking data safe?</div>
+            <div class="faq-a">Yes, your data is extremely safe. We use enterprise-grade Google Firebase infrastructure with SSL encryption for all data transfers. Furthermore, our internal security rules ensure that only you can access and manage your specific ritual records.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Can I add custom Homa types?</div>
+            <div class="faq-a">While the app comes pre-loaded with over 20 traditional Homa types, we understand every region has unique rituals. You can easily add and manage your own custom Homa categories through the preferences menu in your Pandit profile.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">How many bookings can I add?</div>
+            <div class="faq-a">There is no limit. You can add an unlimited number of bookings and maintain your entire history of rituals for years to come. HomaPath is designed to scale with your growing spiritual practice.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Does the WhatsApp feature work on all phones?</div>
+            <div class="faq-a">The WhatsApp integration works on any Android device that has the official WhatsApp or WhatsApp Business app installed. It allows you to quickly share ritual details, location pins, and blessings with your yajamans in one tap.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Redirect Card -->
+    <div class="contact-redirect-card fade-up delay-2" onclick="window.open('https://forms.gle/ySinG29MpkLfmRsUA', '_blank')">
+      <div style="font-size:40px; margin-bottom:16px;">📝</div>
+      <h3 style="font-family:'Cinzel',serif; color:#FFD700; font-size:20px; margin-bottom:12px;">Submit a Formal Request</h3>
+      <p style="color:#C8943A; font-size:15px; max-width:600px; margin:0 auto;">
+        Need technical support or want to suggest a new feature? Click here to fill out our official support form, and our team will get back to you immediately.
+      </p>
+      <div class="btn-primary" style="margin-top:24px; padding:12px 32px; font-size:14px;">
+        Open Support Form
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px;">
+          <span class="nav-logo-flame">🔥</span>
+          <span class="nav-logo-text">HomaPath</span>
+        </a>
+        <p class="footer-brand-desc">
+          Sacred digital companion built with devotion for Pandits across Bharat. Preserving and honoring our timeless Vedic traditions.
+        </p>
+        <p style="color:#FF6B00;font-size:13px;margin-top:8px;">🕉️ Jai Shri Ram</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#homas">Sacred Homas</a></li>
+          <li><a href="index.html#download">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Support</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">Help Center</a></li>
+          <li><a href="mailto:support@homapath.app">Email Support</a></li>
+          <li><a href="contact.html">FAQ</a></li>
+          <li><a href="privacy.html">Data Deletion</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 HomaPath. All rights reserved. Built with 🙏 for Pandits across Bharat.</p>
+      <p style="color:#FF6B00;font-size:13px;">🔥 HomaPath v1.0.0 — Sanctuary Edition</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const ans = q.nextElementSibling;
+      const isOpen = ans.style.display === 'block';
+      
+      // Close all others
+      document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.faq-q').forEach(el => el.classList.remove('active'));
+      
+      // Toggle current
+      if (!isOpen) {
+        ans.style.display = 'block';
+        q.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
